@@ -13,6 +13,7 @@ namespace BluetoothLEBatteryMonitor
         private Info infoForm = null;
         private bool UserClose = false;
         private bool UserShow = false;
+        private bool lowBatteryNotificationDone = false;
 
         public Settings()
         {
@@ -81,6 +82,7 @@ namespace BluetoothLEBatteryMonitor
                 device.UpdateBatteryLevel();
 
             int theLowestBattery = 100;
+            string theLowestBatteryName = "";
             string theBalloonText = "";
 
             foreach (DeviceBLE device in deviceDict.Values)
@@ -88,8 +90,11 @@ namespace BluetoothLEBatteryMonitor
                 int         theBatteryLevel = device.GetBatteryLevel();
                 string      theName = device.GetName();
 
-                if ((theBatteryLevel >=0) && (theBatteryLevel < theLowestBattery))
+                if ((theBatteryLevel >= 0) && (theBatteryLevel < theLowestBattery))
+                {
                     theLowestBattery = theBatteryLevel;
+                    theLowestBatteryName = theName;
+                }
 
                 theBalloonText += String.Format("{0}: {1}%\n", theName, theBatteryLevel);
             }
@@ -115,14 +120,26 @@ namespace BluetoothLEBatteryMonitor
                 NotifyIcon.Icon = BluetoothLEBatteryMonitor.Properties.Resources.Icon_Battery_20;
             }
 
+            if (theLowestBattery <= 20)
+            {
+                if (!lowBatteryNotificationDone)
+                    Notify(String.Format("Battery LOW on '{0}' ({1}%) !", theLowestBatteryName, theLowestBattery), ToolTipIcon.Warning);
+
+                lowBatteryNotificationDone = true;
+            }
+            else
+            {
+                lowBatteryNotificationDone = false;
+            }
+
             NotifyIcon.Text = theBalloonText.Substring(0, Math.Min(theBalloonText.Length, 64));
         }
 
 
-        public void Notify(string message)
+        public void Notify(string message, ToolTipIcon icon = ToolTipIcon.Info)
         {
             if (checkBoxNotification.Checked)
-                NotifyIcon.ShowBalloonTip(300, "BluetoothLE Battery Monitor", message, ToolTipIcon.Info);
+                NotifyIcon.ShowBalloonTip(300, "BluetoothLE Battery Monitor", message, icon);
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -193,7 +210,7 @@ namespace BluetoothLEBatteryMonitor
 
         public void OnNewDevice(DeviceBLE aDevice)
         {
-            this.form.Notify("New device detected: " + aDevice.GetName() + " (Battery: " + aDevice.GetBatteryLevel() + "%)");
+            //this.form.Notify("New device detected: " + aDevice.GetName() + " (Battery: " + aDevice.GetBatteryLevel() + "%)");
             this.form.UpdateIcon();
         }
 

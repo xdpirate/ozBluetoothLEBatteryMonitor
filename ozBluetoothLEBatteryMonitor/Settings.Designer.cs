@@ -93,9 +93,9 @@
             this.groupBox1.Controls.Add(this.numericUpDownRefreshPeriod);
             this.groupBox1.Controls.Add(this.checkBoxStartup);
             this.groupBox1.Location = new System.Drawing.Point(25, 24);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(423, 123);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
@@ -105,7 +105,7 @@
             // 
             this.checkBoxScanForEver.AutoSize = true;
             this.checkBoxScanForEver.Location = new System.Drawing.Point(17, 64);
-            this.checkBoxScanForEver.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBoxScanForEver.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxScanForEver.Name = "checkBoxScanForEver";
             this.checkBoxScanForEver.Size = new System.Drawing.Size(404, 17);
             this.checkBoxScanForEver.TabIndex = 5;
@@ -117,11 +117,11 @@
             // 
             this.checkBoxNotification.AutoSize = true;
             this.checkBoxNotification.Location = new System.Drawing.Point(17, 43);
-            this.checkBoxNotification.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBoxNotification.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxNotification.Name = "checkBoxNotification";
-            this.checkBoxNotification.Size = new System.Drawing.Size(113, 17);
+            this.checkBoxNotification.Size = new System.Drawing.Size(118, 17);
             this.checkBoxNotification.TabIndex = 4;
-            this.checkBoxNotification.Text = "Enable notification";
+            this.checkBoxNotification.Text = "Enable notifications";
             this.checkBoxNotification.UseVisualStyleBackColor = true;
             this.checkBoxNotification.CheckedChanged += new System.EventHandler(this.checkBoxNotification_CheckedChanged);
             // 
@@ -170,7 +170,7 @@
             // 
             this.checkBoxStartup.AutoSize = true;
             this.checkBoxStartup.Location = new System.Drawing.Point(17, 23);
-            this.checkBoxStartup.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBoxStartup.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxStartup.Name = "checkBoxStartup";
             this.checkBoxStartup.Size = new System.Drawing.Size(166, 17);
             this.checkBoxStartup.TabIndex = 0;
@@ -182,9 +182,9 @@
             // 
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(25, 244);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(421, 52);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
@@ -204,9 +204,9 @@
             // 
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Location = new System.Drawing.Point(25, 150);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(421, 90);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
@@ -218,7 +218,7 @@
             this.label2.Location = new System.Drawing.Point(4, 26);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(388, 39);
+            this.label2.Size = new System.Drawing.Size(388, 52);
             this.label2.TabIndex = 1;
             this.label2.Text = resources.GetString("label2.Text");
             // 
