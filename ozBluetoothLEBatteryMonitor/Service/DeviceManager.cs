@@ -174,7 +174,10 @@ namespace BluetoothLEBatteryMonitor.Service
             };
             watcher.Stopped += (DeviceWatcher deviceWatcher, object arg) => {
                 if (running && scanForEver)
+                {
                     deviceWatcher.Start();
+                    return;
+                }
 
                 running = false;
                 watcher = null;
