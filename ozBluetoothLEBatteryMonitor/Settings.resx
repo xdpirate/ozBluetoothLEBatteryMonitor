@@ -339,8 +339,8 @@
     <value>132, 21</value>
   </metadata>
   <data name="label2.Text" xml:space="preserve">
-    <value>This application automatically discover all bluetoothLE devices paired.
-The battery icon in systray display the lowest bluetoothLE device battery level.
+    <value>This application automatically discover all bluetoothLE devices paired to your PC.
+The battery icon, in systray, display the lowest bluetoothLE device battery level.
 The battery level of all devices is displayed in systray balloon
 </value>
   </data>

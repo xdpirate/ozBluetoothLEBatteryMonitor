@@ -177,6 +177,7 @@ namespace BluetoothLEBatteryMonitor.Service
                     deviceWatcher.Start();
 
                 running = false;
+                watcher = null;
             };
             watcher.Start();
         }
