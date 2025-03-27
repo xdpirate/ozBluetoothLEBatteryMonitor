@@ -123,7 +123,8 @@ namespace BluetoothLEBatteryMonitor
             if (theLowestBattery <= 20)
             {
                 if (!lowBatteryNotificationDone)
-                    Notify(String.Format("Battery LOW on '{0}' ({1}%) !", theLowestBatteryName, theLowestBattery), ToolTipIcon.Warning);
+                    //Notify(String.Format("Battery LOW on '{0}' ({1}%) !", theLowestBatteryName, theLowestBattery), ToolTipIcon.Warning);
+                    MessageBox.Show(String.Format("Battery LOW on '{0}' ({1}%) !", theLowestBatteryName, theLowestBattery), "Battery low", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
 
                 lowBatteryNotificationDone = true;
             }
